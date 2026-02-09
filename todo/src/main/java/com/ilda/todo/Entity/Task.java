@@ -17,7 +17,7 @@ public class Task {
     private String name;
 
     @Column(name = "description")
-    private String descritpion;
+    private String description;
 
     @Column(name = "checked")
     private boolean checked;
@@ -38,12 +38,12 @@ public class Task {
         this.name = name;
     }
 
-    public String getDescritpion() {
-        return descritpion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDescritpion(String descritpion) {
-        this.descritpion = descritpion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public boolean isChecked() {
