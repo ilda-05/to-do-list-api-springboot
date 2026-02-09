@@ -1,6 +1,7 @@
 package com.ilda.todo.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,12 @@ public class TaskService {
 
         taskRepository.save(task);
         System.out.println(task);
+
+    }
+
+    public Optional<Task> getTaskById(Long id){
+
+        return taskRepository.findById(id);
 
     }
 

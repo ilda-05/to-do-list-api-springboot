@@ -21,9 +21,15 @@ public class TaskController {
     TaskService taskService;
 
     @GetMapping("/get-all")
-    public List<Task> getMethodName() {
+    public List<Task> getAllTaks() {
         return taskService.getAllTasks();
     }
+
+    @GetMapping("/get-by-id")
+    public Task getTaskById(@RequestParam Long id) {
+        return taskService.getTaskById(id).orElseThrow();
+    }
+
 
     @PostMapping("/add-task")
     public void createTask(@RequestBody Task task) {
