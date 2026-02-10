@@ -57,12 +57,24 @@ public class TaskService {
         taskRepository.save(task);
 
     }
-    
+
     // Delete Task by id
 
     public void deleteTask(Long id){
        
         taskRepository.deleteById(id);
+
+    }
+
+    // Check or uncheck the task
+
+    public void checkTask(Long id) {
+
+        Task task = taskRepository.findById(id).get();
+
+        task.setChecked(!task.isChecked());
+
+        taskRepository.save(task);
 
     }
 
