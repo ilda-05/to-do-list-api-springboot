@@ -47,7 +47,15 @@ public class TaskController {
         
     }
 
-    @PutMapping("checked")
+    @PostMapping("/delete-task")
+    public void postMethodName(@RequestBody Long id) {
+        
+        taskService.deleteTask(id);
+
+    }
+    
+
+    @PutMapping("/checked")
     public void checkTask(@RequestBody Long id) {
         
         taskService.checkTask(id);
